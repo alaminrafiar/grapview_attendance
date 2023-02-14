@@ -29,6 +29,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  image_picker: ^0.8.6+1
   flutter:
     sdk: flutter
 
@@ -63,6 +64,9 @@ flutter:
   assets:
     - Assets/Images/Logo.png
     - Assets/Images/Logo2.png
+    - Assets/Images/Logo3.png
+    - Assets/Images/Logo4.png
+    - Assets/Images/Logo5.png
     - Assets/Images/Rafi1.jpg
 
 

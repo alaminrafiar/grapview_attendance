@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grapview_attendance/Pages/Profile/Edit%20Profile.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -18,22 +19,71 @@ class _ProfileState extends State<Profile> {
               height: 280,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.orange,
+                color: Color(0xFFFE8100),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(padding: EdgeInsets.all(10)),
                   Container(
-                    height: 150,
-                    width: 150,
+                    height: 140,
+                    width: 140,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(width: 5,color: Colors.white),
+                      border: Border.all(width: 4,color: Color(0xFF192855)),
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage("Assets/Images/Rafi1.jpg"),
+                    child: IconButton(
+                      icon: Icon(Icons.person_outline,size: 100,),
+                      onPressed: (){
+                        {
+                          showDialog(context: context, builder: (context){
+                            return AlertDialog(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(15))
+                              ),
+                              title: Column(
+                                children: [
+                                  Text("Upload Photo Using",style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold),),
+                                  SizedBox(height: 30,),
+                                  Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Container(
+                                            height : 100,
+                                              width: 100,
+                                              decoration: BoxDecoration(
+                                                border: Border.all(width: 5,color: Colors.grey.shade200),
+                                                borderRadius: BorderRadius.circular(100),
+                                              ),
+                                              child: IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt_outlined,size: 60,color: Color(0xFF192855),))),
+                                          Text("Camera",style: TextStyle(color: Colors.grey),),
+                                        ],
+                                      ),
+                                       SizedBox(width: 40,),
+                                      Column(
+                                        children: [
+                                          Container(
+                                              height : 100,
+                                              width: 100,
+                                              decoration: BoxDecoration(
+                                                border: Border.all(width: 5,color: Colors.grey.shade200),
+                                                borderRadius: BorderRadius.circular(100),
+                                              ),
+                                              child: IconButton(onPressed: (){}, icon: Icon(Icons.image_outlined,size: 60,color: Color(0xFF192855),))),
+                                          Text("Gallery",style: TextStyle(color: Colors.grey),),
+                                        ],
+                                      ),                                    ],
+                                  ),
+                                  SizedBox(height: 50,),
+
+                                ],
+                              ),
+                            );
+                          });
+                        };
+                      },
                     ),
                   ),
                   SizedBox(height: 10,),
@@ -98,7 +148,12 @@ class _ProfileState extends State<Profile> {
             ),
             SizedBox(height: 150,),
             TextButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (c) =>  EditProfile()));
+              },
               child: Container(
                 height: 50,
                 width: 280,
