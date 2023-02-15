@@ -152,7 +152,7 @@ class _AttendanceState extends State<Attendance> {
             SizedBox(height: 50,),
             GestureDetector(
               onTap: (){
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (c) =>  CheckOut()));

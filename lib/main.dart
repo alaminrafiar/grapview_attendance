@@ -13,7 +13,7 @@ class GrapViewAttendance extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'GrapView',
       theme: ThemeData.light(),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

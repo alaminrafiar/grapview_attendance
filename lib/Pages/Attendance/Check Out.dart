@@ -20,7 +20,7 @@ class _CheckOutState extends State<CheckOut> {
       key: scaffoldKey,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.format_align_left,color: Color(0xFF192855),),
+          icon: const Icon(Icons.format_align_left,color: Color(0xFF192855),),
           onPressed: (){
             if (scaffoldKey.currentState!.isDrawerOpen) {
               scaffoldKey.currentState!.closeDrawer();
@@ -33,7 +33,7 @@ class _CheckOutState extends State<CheckOut> {
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text('CHECK OUT',style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold,fontSize: 25),),
+        title: const Text('CHECK OUT',style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold,fontSize: 25),),
         centerTitle: true,
       ),
       drawer: Drawer(
@@ -43,13 +43,13 @@ class _CheckOutState extends State<CheckOut> {
               Container(
                 height: 280,
                 width: 350,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xFFFE8100),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(padding: EdgeInsets.all(10)),
+                    const Padding(padding: EdgeInsets.all(10)),
                     Container(
                       height: 150,
                       width: 150,
@@ -58,23 +58,23 @@ class _CheckOutState extends State<CheckOut> {
                         border: Border.all(width: 5,color: Colors.white),
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                         backgroundImage: AssetImage("Assets/Images/Rafi1.jpg"),
                       ),
                     ),
-                    SizedBox(height: 10,),
-                    Text("Muksitur Rahman Rafi",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                    Text("EID : GV003",style: TextStyle(color: Colors.white,fontSize: 18),),
+                    const SizedBox(height: 10,),
+                    const Text("Muksitur Rahman Rafi",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
+                    const Text("EID : GV003",style: TextStyle(color: Colors.white,fontSize: 18),),
                   ],
                 ),
               ),
-              SizedBox(height: 50,),
+              const SizedBox(height: 50,),
               TextButton(
                 onPressed: (){
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (c) =>  Profile()));
+                          builder: (c) =>  const Profile()));
                 },
                 child: Container(
                   height: 50,
@@ -86,7 +86,7 @@ class _CheckOutState extends State<CheckOut> {
                       BoxShadow(color: Colors.grey.shade200,spreadRadius: 2,blurRadius: 0)
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text("Profile",style: TextStyle(
                         color: Colors.orange,
                         fontSize: 20,
@@ -100,7 +100,7 @@ class _CheckOutState extends State<CheckOut> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (c) =>  ChangePassword()));
+                          builder: (c) =>  const ChangePassword()));
                 },
                 child: Container(
                   height: 50,
@@ -112,7 +112,7 @@ class _CheckOutState extends State<CheckOut> {
                       BoxShadow(color: Colors.grey.shade200,spreadRadius: 2,blurRadius: 0)
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text("Change Password",style: TextStyle(
                         color: Colors.orange,
                         fontSize: 20,
@@ -121,16 +121,16 @@ class _CheckOutState extends State<CheckOut> {
                   ),
                 ),
               ),
-              SizedBox(height: 270),
+              const SizedBox(height: 270),
               TextButton(onPressed: (){
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (c) =>  LoginPage()));
+                        builder: (c) =>  const LoginPage()));
               },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text("LogOut",style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold),),
                     Icon(Icons.forward),
                   ],
@@ -144,18 +144,18 @@ class _CheckOutState extends State<CheckOut> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.all(40)),
-            Center(child: Text("February 14, 2023",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Color(0xFF192855)),)),
-            Text("5 : 30  PM",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Color(0xFF192855)),),
-            SizedBox(height: 10,),
-            Text("Hello Muksitur",style: TextStyle(fontSize: 20,color: Color(0xFFFE8100)),),
-            SizedBox(height: 50,),
+            const Padding(padding: EdgeInsets.all(40)),
+            const Center(child: Text("February 14, 2023",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Color(0xFF192855)),)),
+            const Text("5 : 30  PM",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Color(0xFF192855)),),
+            const SizedBox(height: 10,),
+            const Text("Hello Muksitur",style: TextStyle(fontSize: 20,color: Color(0xFFFE8100)),),
+            const SizedBox(height: 50,),
             GestureDetector(
               onTap: (){
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (c) =>  Attendance()));
+                        builder: (c) =>  const Attendance()));
               },
               child: Container(
                   height: 250,
@@ -167,8 +167,8 @@ class _CheckOutState extends State<CheckOut> {
                   child: Image.asset("Assets/Images/Logo4.png",fit: BoxFit.cover,)
               ),
             ),
-            SizedBox(height: 20,),
-            Text("CHECK OUT",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
+            const SizedBox(height: 20,),
+            const Text("CHECK OUT",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
           ],
         ),
       ),
