@@ -19,9 +19,9 @@ class _AttendanceState extends State<Attendance> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.format_align_left,color: Color(0xFF192855),),
-          onPressed: (){
+        leading: GestureDetector(
+          child: Image.asset("Assets/Images/Logo6.png",height: 10,width: 10,),
+          onTap: (){
             if (scaffoldKey.currentState!.isDrawerOpen) {
               scaffoldKey.currentState!.closeDrawer();
               //close drawer, if drawer is open
@@ -64,7 +64,7 @@ class _AttendanceState extends State<Attendance> {
                   ),
                   SizedBox(height: 10,),
                   Text("Muksitur Rahman Rafi",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                  Text("EID : GV003",style: TextStyle(color: Colors.white,fontSize: 18),),
+                  Text("EID : GV003",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w300),),
                 ],
               ),
               ),
@@ -123,7 +123,7 @@ class _AttendanceState extends State<Attendance> {
               ),
               SizedBox(height: 270),
               TextButton(onPressed: (){
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (c) =>  LoginPage()));

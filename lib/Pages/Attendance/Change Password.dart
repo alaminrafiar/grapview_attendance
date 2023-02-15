@@ -31,13 +31,20 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(100)),
-                      ),
-                      hintText: "**********",
-                      hintStyle: TextStyle(color: Colors.grey.shade400),
-                      border: InputBorder.none
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    hintText: "**********",
+                    hintStyle: TextStyle(color: Colors.grey.shade400),
                   ),
                 ),
               ),
@@ -53,13 +60,20 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(100)),
-                      ),
-                      hintText: "**********",
-                      hintStyle: TextStyle(color: Colors.grey.shade400),
-                      border: InputBorder.none
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    hintText: "**********",
+                    hintStyle: TextStyle(color: Colors.grey.shade400),
                   ),
                 ),
               ),
@@ -75,13 +89,20 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(100)),
-                      ),
-                      hintText: "**********",
-                      hintStyle: TextStyle(color: Colors.grey.shade400),
-                      border: InputBorder.none
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    hintText: "**********",
+                    hintStyle: TextStyle(color: Colors.grey.shade400),
                   ),
                 ),
               ),

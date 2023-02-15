@@ -19,9 +19,9 @@ class _CheckOutState extends State<CheckOut> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.format_align_left,color: Color(0xFF192855),),
-          onPressed: (){
+        leading: GestureDetector(
+          child: Image.asset("Assets/Images/Logo6.png",height: 10,width: 10,),
+          onTap: (){
             if (scaffoldKey.currentState!.isDrawerOpen) {
               scaffoldKey.currentState!.closeDrawer();
               //close drawer, if drawer is open
@@ -123,7 +123,7 @@ class _CheckOutState extends State<CheckOut> {
               ),
               const SizedBox(height: 270),
               TextButton(onPressed: (){
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (c) =>  const LoginPage()));

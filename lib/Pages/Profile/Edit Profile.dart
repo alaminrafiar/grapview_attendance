@@ -45,7 +45,7 @@ class _EditProfileState extends State<EditProfile> {
                 Text("Full Name :",style: TextStyle(color: Colors.grey),),
                 SizedBox(width: 20,),
                 Container(
-                  height: 50,
+                  height: 45,
                   width: 260,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -53,13 +53,20 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
-                        ),
-                        hintText: "Muksitur Rahman Rafi",
-                        hintStyle: TextStyle(color: Colors.grey.shade400,),
-                        border: InputBorder.none
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      hintText: "Muksitur Rahman Rafi",
+                      hintStyle: TextStyle(color: Colors.grey.shade400),
                     ),
                   ),
                 ),
@@ -72,7 +79,7 @@ class _EditProfileState extends State<EditProfile> {
                 Text("Email :",style: TextStyle(color: Colors.grey),),
                 SizedBox(width: 50,),
                 Container(
-                  height: 50,
+                  height: 45,
                   width: 260,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -80,13 +87,20 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
-                        ),
-                        hintText: "muksitur35-466@diu.edu.bd",
-                        hintStyle: TextStyle(color: Colors.grey.shade400),
-                        border: InputBorder.none
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      hintText: "muksitur35-466@diu.edu.bd",
+                      hintStyle: TextStyle(color: Colors.grey.shade400),
                     ),
                   ),
                 ),
@@ -97,9 +111,9 @@ class _EditProfileState extends State<EditProfile> {
               children: [
                 Padding(padding: EdgeInsets.all(15)),
                 Text("Phone No :",style: TextStyle(color: Colors.grey),),
-                SizedBox(width: 30,),
+                SizedBox(width: 24,),
                 Container(
-                  height: 50,
+                  height: 45,
                   width: 260,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -107,13 +121,20 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                          borderRadius: BorderRadius.all(Radius.circular(100)),
-                        ),
-                        hintText: "+8801734128544",
-                        hintStyle: TextStyle(color: Colors.grey.shade400),
-                        border: InputBorder.none
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      hintText: "Phone Number",
+                      hintStyle: TextStyle(color: Colors.grey.shade400),
                     ),
                   ),
                 ),
@@ -124,10 +145,10 @@ class _EditProfileState extends State<EditProfile> {
               children: [
                 Padding(padding: EdgeInsets.all(15)),
                 Text("Gender :",style: TextStyle(color: Colors.grey),),
-                SizedBox(width: 50,),
+                SizedBox(width: 40,),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 50),
-                  height: 50,
+                  height: 41,
                   width: 260,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -137,6 +158,7 @@ class _EditProfileState extends State<EditProfile> {
                     ],
                   ),
                   child: DropdownButton<String>(
+                    underline: SizedBox(),
                     onChanged: (String? newValue){
                       setState((){
                         dropdownValue = newValue!;
@@ -155,7 +177,7 @@ class _EditProfileState extends State<EditProfile> {
                 ),
               ],
             ),
-            SizedBox(height: 50,),
+            SizedBox(height: 60,),
             TextButton(
               onPressed: (){
                 Navigator.push(
