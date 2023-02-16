@@ -20,7 +20,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               Center(child: Image.asset("Assets/Images/Logo.png",height: 178,width: 186,)),
               Text("Set Your New Password",style: TextStyle(color: Color(0xFF192855)),),
               SizedBox(height: 20,),
-              Text("Type Old password",style: TextStyle(color: Color(0xFF949494)),),
+              Text("Old password",style: TextStyle(color: Color(0xFF949494)),),
               SizedBox(height: 10),
               Container(
                 height: 45,
@@ -49,7 +49,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
               ),
               SizedBox(height: 20,),
-              Text("Type New password",style: TextStyle(color: Color(0xFF949494)),),
+              Text("New password",style: TextStyle(color: Color(0xFF949494)),),
               SizedBox(height: 10),
               Container(
                 height: 45,

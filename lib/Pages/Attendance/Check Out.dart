@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grapview_attendance/Pages/Attendance/Attendance.dart';
 import 'package:grapview_attendance/Pages/Attendance/Change%20Password.dart';
+import 'package:grapview_attendance/Pages/Attendance/CheckOut%20Loading.dart';
 import 'package:grapview_attendance/Pages/LoginPage/LoginPage.dart';
 import 'package:grapview_attendance/Pages/Profile/Profile.dart';
 
@@ -155,7 +156,7 @@ class _CheckOutState extends State<CheckOut> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (c) =>  const Attendance()));
+                        builder: (c) =>  const CheckingOut()));
               },
               child: Container(
                   height: 250,

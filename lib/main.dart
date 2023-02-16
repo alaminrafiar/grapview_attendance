@@ -17,5 +17,3 @@ class GrapViewAttendance extends StatelessWidget {
     );
   }
 }
-
-

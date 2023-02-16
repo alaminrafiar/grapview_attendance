@@ -1,19 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:grapview_attendance/Pages/Attendance/Attendance.dart';
 import 'package:grapview_attendance/Pages/Attendance/Change%20Password.dart';
-import 'package:grapview_attendance/Pages/Attendance/Check%20In%20Loading.dart';
-import 'package:grapview_attendance/Pages/Attendance/Check%20Out.dart';
 import 'package:grapview_attendance/Pages/LoginPage/LoginPage.dart';
 import 'package:grapview_attendance/Pages/Profile/Profile.dart';
 
-class Attendance extends StatefulWidget {
-  const Attendance({Key? key}) : super(key: key);
+class CheckingOut extends StatefulWidget {
+  const CheckingOut({Key? key}) : super(key: key);
 
   @override
-  State<Attendance> createState() => _AttendanceState();
+  State<CheckingOut> createState() => _CheckingOutState();
 }
 
-class _AttendanceState extends State<Attendance> {
+class _CheckingOutState extends State<CheckingOut> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -35,7 +33,7 @@ class _AttendanceState extends State<Attendance> {
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text('CHECK IN',style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold,fontSize: 25),),
+        title: const Text('CHECK OUT',style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold,fontSize: 25),),
         centerTitle: true,
       ),
       drawer: Drawer(
@@ -45,38 +43,38 @@ class _AttendanceState extends State<Attendance> {
               Container(
                 height: 280,
                 width: 350,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xFFFE8100),
                 ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(padding: EdgeInsets.all(10)),
-                  Container(
-                    height: 150,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(width: 5,color: Colors.white),
-                      borderRadius: BorderRadius.circular(100),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Padding(padding: EdgeInsets.all(10)),
+                    Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 5,color: Colors.white),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: const CircleAvatar(
+                        backgroundImage: AssetImage("Assets/Images/Rafi1.jpg"),
+                      ),
                     ),
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage("Assets/Images/Rafi1.jpg"),
-                    ),
-                  ),
-                  SizedBox(height: 10,),
-                  Text("Muksitur Rahman Rafi",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                  Text("EID : GV003",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w300),),
-                ],
+                    const SizedBox(height: 10,),
+                    const Text("Muksitur Rahman Rafi",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
+                    const Text("EID : GV003",style: TextStyle(color: Colors.white,fontSize: 18),),
+                  ],
+                ),
               ),
-              ),
-              SizedBox(height: 50,),
+              const SizedBox(height: 50,),
               TextButton(
                 onPressed: (){
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (c) =>  Profile()));
+                          builder: (c) =>  const Profile()));
                 },
                 child: Container(
                   height: 50,
@@ -88,7 +86,7 @@ class _AttendanceState extends State<Attendance> {
                       BoxShadow(color: Colors.grey.shade200,spreadRadius: 2,blurRadius: 0)
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text("Profile",style: TextStyle(
                         color: Colors.orange,
                         fontSize: 20,
@@ -102,7 +100,7 @@ class _AttendanceState extends State<Attendance> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (c) =>  ChangePassword()));
+                          builder: (c) =>  const ChangePassword()));
                 },
                 child: Container(
                   height: 50,
@@ -114,7 +112,7 @@ class _AttendanceState extends State<Attendance> {
                       BoxShadow(color: Colors.grey.shade200,spreadRadius: 2,blurRadius: 0)
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text("Change Password",style: TextStyle(
                         color: Colors.orange,
                         fontSize: 20,
@@ -123,20 +121,20 @@ class _AttendanceState extends State<Attendance> {
                   ),
                 ),
               ),
-              SizedBox(height: 270),
+              const SizedBox(height: 270),
               TextButton(onPressed: (){
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (c) =>  LoginPage()));
+                        builder: (c) =>  const LoginPage()));
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("LogOut",style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold),),
-                  Icon(Icons.forward),
-                ],
-              ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text("LogOut",style: TextStyle(color: Color(0xFF192855),fontWeight: FontWeight.bold),),
+                    Icon(Icons.forward),
+                  ],
+                ),
               ),
               Image.asset("Assets/Images/Logo.png",height: 50,width: 50,),
             ],
@@ -146,31 +144,31 @@ class _AttendanceState extends State<Attendance> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(padding: EdgeInsets.all(40)),
-            Center(child: Text("February 14, 2023",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Color(0xFF192855)),)),
-            Text("5 : 30  PM",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Color(0xFF192855)),),
-            SizedBox(height: 10,),
-            Text("Hello Muksitur",style: TextStyle(fontSize: 20,color: Color(0xFFFE8100)),),
-            SizedBox(height: 50,),
+            const Padding(padding: EdgeInsets.all(40)),
+            const Center(child: Text("February 14, 2023",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Color(0xFF192855)),)),
+            const Text("5 : 30  PM",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Color(0xFF192855)),),
+            const SizedBox(height: 10,),
+            const Text("Hello Muksitur",style: TextStyle(fontSize: 20,color: Color(0xFFFE8100)),),
+            const SizedBox(height: 50,),
             GestureDetector(
               onTap: (){
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (c) =>  CheckingIn()));
+                        builder: (c) =>  const Attendance()));
               },
               child: Container(
-                height: 250,
-                width: 250,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 5,color: Colors.grey.shade200),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                  child: Image.asset("Assets/Images/Logo3.png")
+                  height: 250,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 5,color: Colors.grey.shade200),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Image.asset("Assets/Images/Logo8.png",fit: BoxFit.cover,)
               ),
             ),
-            SizedBox(height: 20,),
-            Text("CHECK IN",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
+            const SizedBox(height: 20,),
+            const Text("CHECKING OUT...",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
           ],
         ),
       ),
