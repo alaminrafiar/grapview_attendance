@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     hintText: "Employee ID",
                     contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 120),
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
                     filled: true,
                     fillColor: Colors.grey.shade100,
                     border: OutlineInputBorder(
@@ -51,8 +51,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   validator: (value){
                     if(value!.isEmpty){
-                      return "Eployee ID is Required";
+                      return "Employee ID is Required";
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 20,),
@@ -63,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     hintText: "Password",
                     contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 120),
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
                     filled: true,
                     fillColor: Colors.grey.shade100,
                     border: OutlineInputBorder(
@@ -92,8 +93,9 @@ class _LoginPageState extends State<LoginPage> {
                       return "Password is Required";
                     }
                     else if (passController.text.length<6){
-                      return "Password Length Should be more than 6 characters";
+                      return "Password must be 6 characters or more";
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 60,),

@@ -12,6 +12,7 @@ class ResetPassword extends StatefulWidget {
 class _ResetPasswordState extends State<ResetPassword> {
   final _formfield = GlobalKey<FormState>();
   final passController = TextEditingController();
+  final retypeController = TextEditingController();
   bool passToggle = true;
 
   @override
@@ -27,7 +28,10 @@ class _ResetPasswordState extends State<ResetPassword> {
                 Image.asset("Assets/Images/Logo.png",height: 178,width: 186,),
                 Text("Set Your New Password",style: TextStyle(color: Color(0xFF192855)),),
                 SizedBox(height: 20,),
-                Text("Type new password",style: TextStyle(color: Color(0xFF949494)),),
+                Padding(
+                  padding: const EdgeInsets.only(right: 225),
+                  child: Text("Type new password",style: TextStyle(color: Color(0xFF949494)),),
+                ),
                 SizedBox(height: 10),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
@@ -36,14 +40,17 @@ class _ResetPasswordState extends State<ResetPassword> {
                   decoration: InputDecoration(
                     hintText: "***********",
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 120),
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
                     filled: true,
                     fillColor: Colors.grey.shade100,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey.shade200,width: 1),
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    border: InputBorder.none,
                     suffixIcon: InkWell(
                       onTap: (){
                         setState(() {
@@ -55,31 +62,34 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                   validator: (value){
                     if (value!.isEmpty){
-                      return "Enter New Password";
-                    }
-                    else if (passController.text.length<6){
-                      return "Password Length Should be more than 6 characters";
+                      return "";
                     }
                   },
                 ),
                 SizedBox(height: 20,),
-                Text("Retype new password",style: TextStyle(color: Color(0xFF949494)),),
+                Padding(
+                  padding: const EdgeInsets.only(right: 225),
+                  child: Text("Retype new password",style: TextStyle(color: Color(0xFF949494)),),
+                ),
                 SizedBox(height: 10,),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
-                  controller: passController,
+                  controller: retypeController,
                   obscureText: passToggle,
                   decoration: InputDecoration(
                     hintText: "***********",
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 120),
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
                     filled: true,
                     fillColor: Colors.grey.shade100,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    border: InputBorder.none,
                     suffixIcon: InkWell(
                       onTap: (){
                         setState(() {
@@ -91,10 +101,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                   validator: (value){
                     if (value!.isEmpty){
-                      return "Enter New Password";
-                    }
-                    else if (passController.text.length<6){
-                      return "Password Length Should be more than 6 characters";
+                      return "";
                     }
                   },
                 ),

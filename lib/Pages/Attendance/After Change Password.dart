@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grapview_attendance/Pages/Attendance/Attendance.dart';
 
@@ -25,7 +26,7 @@ class _PasswordSetState extends State<PasswordSet> {
                 onPressed: (){
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      CupertinoPageRoute(
                           builder: (c) =>  Attendance()));
                 },
                 child: Container(

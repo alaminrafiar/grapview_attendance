@@ -159,8 +159,8 @@ class _CheckOutState extends State<CheckOut> {
                         builder: (c) =>  const CheckingOut()));
               },
               child: Container(
-                  height: 250,
-                  width: 250,
+                  height: 200,
+                  width: 200,
                   decoration: BoxDecoration(
                     border: Border.all(width: 5,color: Colors.grey.shade200),
                     borderRadius: BorderRadius.circular(30),
@@ -169,7 +169,7 @@ class _CheckOutState extends State<CheckOut> {
               ),
             ),
             const SizedBox(height: 20,),
-            const Text("CHECK OUT",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
+            const Text("CHECK OUT",style: TextStyle(fontSize: 28,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
           ],
         ),
       ),

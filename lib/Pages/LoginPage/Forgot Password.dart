@@ -35,9 +35,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   decoration: InputDecoration(
                     hintText: "+8801XXXXXXXXX",
                     contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 110),
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
                     filled: true,
                     fillColor: Colors.grey.shade100,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                       borderRadius: BorderRadius.circular(100),
@@ -45,7 +49,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                   validator: (value){
                     if(value!.isEmpty){
-                      return "Enter Phone Number";
+                      return "";
                     }
                   },
                 ),

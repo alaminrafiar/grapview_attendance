@@ -31,6 +31,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                       borderRadius: BorderRadius.circular(100),
@@ -60,6 +61,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                       borderRadius: BorderRadius.circular(100),
@@ -89,6 +91,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                       borderRadius: BorderRadius.circular(100),

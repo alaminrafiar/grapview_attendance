@@ -160,8 +160,8 @@ class _AttendanceState extends State<Attendance> {
                         builder: (c) =>  CheckingIn()));
               },
               child: Container(
-                height: 250,
-                width: 250,
+                height: 200,
+                width: 200,
                 decoration: BoxDecoration(
                   border: Border.all(width: 5,color: Colors.grey.shade200),
                   borderRadius: BorderRadius.circular(30),
@@ -170,7 +170,7 @@ class _AttendanceState extends State<Attendance> {
               ),
             ),
             SizedBox(height: 20,),
-            Text("CHECK IN",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
+            Text("CHECK IN",style: TextStyle(fontSize: 28,fontWeight: FontWeight.w400,color: Color(0xFF192855)),),
           ],
         ),
       ),

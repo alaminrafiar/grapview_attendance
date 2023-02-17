@@ -53,6 +53,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                         borderRadius: BorderRadius.circular(100),
@@ -87,6 +88,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                         borderRadius: BorderRadius.circular(100),
@@ -121,6 +123,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                         borderRadius: BorderRadius.circular(100),
@@ -147,7 +150,7 @@ class _EditProfileState extends State<EditProfile> {
                 Text("Gender :",style: TextStyle(color: Colors.grey),),
                 SizedBox(width: 40,),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                   height: 41,
                   width: 260,
                   decoration: BoxDecoration(
@@ -158,7 +161,12 @@ class _EditProfileState extends State<EditProfile> {
                     ],
                   ),
                   child: DropdownButton<String>(
+                    borderRadius: BorderRadius.circular(12),
+                    dropdownColor: Colors.white,
+                    elevation: 1,
                     underline: SizedBox(),
+                    isDense: true,
+                    isExpanded: true,
                     onChanged: (String? newValue){
                       setState((){
                         dropdownValue = newValue!;
