@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grapview_attendance/Pages/LoginPage/LoginPage.dart';
 
@@ -25,7 +26,7 @@ class _AllSetState extends State<AllSet> {
                 onPressed: (){
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      CupertinoPageRoute(
                           builder: (c) =>  LoginPage()));
                 },
                 child: Container(

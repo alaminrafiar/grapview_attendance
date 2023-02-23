@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:grapview_attendance/Pages/LoginPage/LoginPage.dart';
 import 'package:grapview_attendance/Pages/LoginPage/Reset%20Password.dart';
 
@@ -51,6 +52,10 @@ class _VerifyState extends State<Verify> {
                     children: [
                       Expanded(
                         child: TextField(
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(1),
+                          ],
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.grey.shade200,width: 1),

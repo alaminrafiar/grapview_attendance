@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grapview_attendance/Pages/Attendance/Attendance.dart';
 
@@ -26,7 +27,7 @@ class _AllUpdatedState extends State<AllUpdated> {
                 onPressed: (){
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      CupertinoPageRoute(
                           builder: (c) =>  Attendance()));
                 },
                 child: Container(
