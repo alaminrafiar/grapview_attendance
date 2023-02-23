@@ -52,9 +52,16 @@ class _VerifyState extends State<Verify> {
                     children: [
                       Expanded(
                         child: TextField(
+                          onChanged: (value){
+                            if (value.length == 1){
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(1),
+                            FilteringTextInputFormatter.digitsOnly,
                           ],
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
@@ -67,6 +74,17 @@ class _VerifyState extends State<Verify> {
                       ),
                       Expanded(
                         child: TextField(
+                          onChanged: (value){
+                            if (value.length == 1){
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(1),
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.grey.shade200,width: 1),
@@ -77,6 +95,17 @@ class _VerifyState extends State<Verify> {
                       ),
                       Expanded(
                         child: TextField(
+                          onChanged: (value){
+                            if (value.length == 1){
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(1),
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.grey.shade200,width: 1),
@@ -87,6 +116,17 @@ class _VerifyState extends State<Verify> {
                       ),
                       Expanded(
                         child: TextField(
+                          onChanged: (value){
+                            if (value.length == 1){
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(1),
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.grey.shade200,width: 1),
