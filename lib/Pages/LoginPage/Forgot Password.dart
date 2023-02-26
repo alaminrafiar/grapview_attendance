@@ -16,10 +16,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   @override
   Widget build(BuildContext context) {
+    var _mediaquery = MediaQuery.of(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 150),
+      body: Padding(
+        padding: EdgeInsets.only(left: 20,right: 20,top: 150),
+        child: SingleChildScrollView(
           child: Form(
             key: _formkey,
             child: Column(
@@ -30,30 +31,32 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 SizedBox(height: 10,),
                 Text("Input your Phone Number Bellow",style: TextStyle(color: Color(0xFF949494),fontSize: 14),),
                 SizedBox(height: 40,),
-                TextFormField(
-                  controller: emailController,
-                  decoration: InputDecoration(
-                    hintText: "+8801XXXXXXXXX",
-                    contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
-                    filled: true,
-                    fillColor: Colors.grey.shade100,
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                      borderRadius: BorderRadius.circular(100),
+                Container(
+                  height: _mediaquery.size.height *0.1,
+                  child: TextFormField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      hintText: "+8801XXXXXXXXX",
+                      contentPadding:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+                      filled: true,
+                      fillColor: Colors.grey.shade100,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "";
+                      }
+                    },
                   ),
-                  validator: (value){
-                    if(value!.isEmpty){
-                      return "";
-                    }
-                  },
                 ),
-                SizedBox(height: 40,),
                 InkWell(
                   onTap: (){
                     if(_formkey.currentState!.validate()){

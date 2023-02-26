@@ -17,10 +17,12 @@ class _ResetPasswordState extends State<ResetPassword> {
 
   @override
   Widget build(BuildContext context) {
+    var _mediaquery = MediaQuery.of(context);
+
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 150),
+      body: Padding(
+        padding: EdgeInsets.only(left: 20,right: 20,top: 150),
+        child: SingleChildScrollView(
           child: Form(
             key: _formfield,
             child: Column(

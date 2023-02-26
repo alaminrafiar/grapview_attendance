@@ -28,75 +28,82 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Image.asset("Assets/Images/Logo.png",height: 178,width: 186,),
                 const SizedBox(height: 20,),
-                TextFormField(
-                  controller: emailController,
-                  decoration: InputDecoration(
-                    hintText: "Employee ID",
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
-                    filled: true,
-                    fillColor: Colors.grey.shade100,
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                        borderRadius: BorderRadius.circular(100),
-                    ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                        borderRadius: BorderRadius.circular(100),
+                Container(
+                  height: 160,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          hintText: "Employee ID",
+                          contentPadding:
+                          const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+                          filled: true,
+                          fillColor: Colors.grey.shade100,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        ),
+                        validator: (value){
+                          if(value!.isEmpty){
+                            return "Employee ID is Required";
+                          }
+                          return null;
+                        },
                       ),
+                      const SizedBox(height: 20,),
+                      TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        controller: passController,
+                        obscureText: passToggle,
+                        decoration: InputDecoration(
+                          hintText: "Password",
+                          contentPadding:
+                          const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+                          filled: true,
+                          fillColor: Colors.grey.shade100,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          suffixIcon: InkWell(
+                            onTap: (){
+                              setState(() {
+                                passToggle = !passToggle;
+                              });
+                            },
+                            child: Icon(passToggle ? Icons.visibility : Icons.visibility_off),
+                          ),
+                        ),
+                        validator: (value){
+                          if (value!.isEmpty){
+                            return "Password is Required";
+                          }
+                          else if (passController.text.length<6){
+                            return "Password must be 6 characters or more";
+                          }
+                          return null;
+                        },
+                      ),
+                    ],
                   ),
-                  validator: (value){
-                    if(value!.isEmpty){
-                      return "Employee ID is Required";
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 20,),
-                TextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  controller: passController,
-                  obscureText: passToggle,
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
-                    filled: true,
-                    fillColor: Colors.grey.shade100,
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                       focusedBorder: OutlineInputBorder(
-                         borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
-                         borderRadius: BorderRadius.circular(100),
-                       ),
-                      suffixIcon: InkWell(
-                      onTap: (){
-                        setState(() {
-                          passToggle = !passToggle;
-                        });
-                      },
-                      child: Icon(passToggle ? Icons.visibility : Icons.visibility_off),
-                    ),
-                  ),
-                  validator: (value){
-                    if (value!.isEmpty){
-                      return "Password is Required";
-                    }
-                    else if (passController.text.length<6){
-                      return "Password must be 6 characters or more";
-                    }
-                    return null;
-                  },
                 ),
                 const SizedBox(height: 60,),
                 InkWell(
