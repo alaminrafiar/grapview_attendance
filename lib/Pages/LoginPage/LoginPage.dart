@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                       context,
                       MaterialPageRoute(
                           builder: (c) =>  const ForgotPassword()));
-                }, child: const Text("Fogot Password",style: TextStyle(color: Color(0xFF192855),fontSize: 18),))
+                }, child: const Text("Reset Password",style: TextStyle(color: Color(0xFF192855),fontSize: 18),))
               ],
             ),
           ),
