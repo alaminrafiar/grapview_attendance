@@ -29,14 +29,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 SizedBox(height: 5,),
                 Text("Forgot Password ? Not a Problrm",style: TextStyle(color: Color(0xFF192855),fontSize: 18),),
                 SizedBox(height: 10,),
-                Text("Input your Phone Number Bellow",style: TextStyle(color: Color(0xFF949494),fontSize: 14),),
+                Text("Input your Employee ID Bellow",style: TextStyle(color: Color(0xFF949494),fontSize: 14),),
                 SizedBox(height: 40,),
                 Container(
                   height: _mediaquery.size.height *0.1,
                   child: TextFormField(
                     controller: emailController,
                     decoration: InputDecoration(
-                      hintText: "+8801XXXXXXXXX",
+                      hintText: "Employee Id",
                       contentPadding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
                       filled: true,
