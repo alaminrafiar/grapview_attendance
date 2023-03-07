@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grapview_attendance/Pages/Profile/Edit%20Profile.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -9,6 +11,33 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+
+  File? image;
+  final _picker = ImagePicker();
+
+  Future getImage()async{
+    final pickedFile = await _picker.pickImage(source: ImageSource.camera, imageQuality: 80);
+    if(pickedFile!= null){
+      image = File(pickedFile.path);
+      setState(() {
+
+      });
+    }else{
+      print('No image selected');
+    }
+  }
+  Future uploadImage()async{
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery, imageQuality: 80);
+    if(pickedFile!= null){
+      image = File(pickedFile.path);
+      setState(() {
+
+      });
+    }else{
+      print('No image selected');
+    }
+  }
+
   double screenHeight = 0;
   double screenWidth = 0;
 
@@ -62,7 +91,9 @@ class _ProfileState extends State<Profile> {
                                               border: Border.all(width: 5,color: Colors.grey.shade100),
                                               borderRadius: BorderRadius.circular(100),
                                             ),
-                                            child: IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt_outlined,size: 60,color: Color(0xFF192855),))),
+                                            child: IconButton(onPressed: (){
+                                              getImage();
+                                            }, icon: Icon(Icons.camera_alt_outlined,size: 60,color: Color(0xFF192855),))),
                                         Text("Camera",style: TextStyle(color: Colors.grey),),
                                       ],
                                     ),
@@ -76,7 +107,9 @@ class _ProfileState extends State<Profile> {
                                               border: Border.all(width: 5,color: Colors.grey.shade100),
                                               borderRadius: BorderRadius.circular(100),
                                             ),
-                                            child: IconButton(onPressed: (){}, icon: Icon(Icons.image_outlined,size: 60,color: Color(0xFF192855),))),
+                                            child: IconButton(onPressed: (){
+                                              uploadImage();
+                                            }, icon: Icon(Icons.image_outlined,size: 60,color: Color(0xFF192855),))),
                                         Text("Gallery",style: TextStyle(color: Colors.grey),),
                                       ],
                                     ),                                    ],
