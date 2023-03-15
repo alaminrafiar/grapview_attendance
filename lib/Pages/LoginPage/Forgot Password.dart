@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grapview_attendance/Pages/LoginPage/LoginPage.dart';
 import 'package:grapview_attendance/Pages/LoginPage/Verification.dart';
+import 'package:grapview_attendance/controller/ResetPass/myResetService.dart';
+import 'package:grapview_attendance/model/AuthReset.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -11,8 +13,9 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   final _formkey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  bool passToggle = true;
+  final idController = TextEditingController();
+
+  AuthReset? authReset;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 Container(
                   height: _mediaquery.size.height *0.1,
                   child: TextFormField(
-                    controller: emailController,
+                    controller: idController,
                     decoration: InputDecoration(
                       hintText: "Employee Id",
                       contentPadding:
@@ -49,6 +52,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
                         borderRadius: BorderRadius.circular(100),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade200,width: 2),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
                     ),
                     validator: (value){
                       if(value!.isEmpty){
@@ -58,13 +65,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
                 InkWell(
-                  onTap: (){
-                    if(_formkey.currentState!.validate()){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (c) =>  Verify()));
-                      emailController.clear();
+                  onTap: ()async{
+                    authReset = await MyResetService.mFetchUser(idController.text, );
+                    setState(() {
+
+                    });
+                    if(_formkey.currentState!.validate() && authReset != null) {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Verify()));
                     }
                   },
                   child: Container(

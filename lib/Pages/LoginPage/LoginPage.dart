@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grapview_attendance/Pages/Attendance/Attendance.dart';
 import 'package:grapview_attendance/Pages/LoginPage/Forgot%20Password.dart';
+import 'package:grapview_attendance/controller/Login/my%20login%20service.dart';
+import 'package:grapview_attendance/model/AuthLogin.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -12,9 +14,12 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formfield = GlobalKey<FormState>();
-  final emailController = TextEditingController();
+  final idController = TextEditingController();
   final passController = TextEditingController();
+
   bool passToggle = true;
+
+  AuthLogin? authLogin;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       TextFormField(
-                        controller: emailController,
+                        controller: idController,
                         decoration: InputDecoration(
                           hintText: "Employee ID",
                           contentPadding:
@@ -58,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                             return "Employee ID is Required";
                           }
                           return null;
-                        },
+                          },
                       ),
                       const SizedBox(height: 20,),
                       TextFormField(
@@ -107,14 +112,13 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 60,),
                 InkWell(
-                  onTap: (){
-                    if(_formfield.currentState!.validate()){
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (c) =>  const Attendance()));
-                      emailController.clear();
-                      passController.clear();
+                  onTap: ()async{
+                    authLogin = await MyLoginService.mFetchUser(idController.text, passController.text);
+                    setState(() {
+
+                    });
+                    if(_formfield.currentState!.validate() && authLogin != null) {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Attendance()));
                     }
                   },
                   child: Container(
@@ -137,6 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const SizedBox(height: 10,),
+
                 TextButton(onPressed: (){
                   Navigator.push(
                       context,
