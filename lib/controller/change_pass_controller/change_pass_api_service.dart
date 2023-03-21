@@ -16,7 +16,7 @@ class ChangePassApiService {
           'Content-Type': 'application/json',
           "api_key": ChangePassConstants.apikeyChange,
           "Authorization":
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZmFmZmQ2MTVlZjJhZTY4OTYxZDVhNSIsIm5hbWUiOiJhYnVsIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjc5MzMxNjMxLCJleHAiOjE2Nzk0MTgwMzF9.KR9-0Y-SPl3_E3tlFGIbtRTU5OEM8q7qqaHk7MCvvVI"
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZmFmZmQ2MTVlZjJhZTY4OTYxZDVhNSIsIm5hbWUiOiJhbGFtaW4iLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE2NzkzODk1MzQsImV4cCI6MTY3OTQ3NTkzNH0.ZVwIsP38m13ZmEnabklYmrz1aUdswK0oeilmohB0qj4"
 
         },
         body: jsonEncode({
