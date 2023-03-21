@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grapview_attendance/Pages/Attendance/change_password_try.dart';
+import 'package:grapview_attendance/controller/profile/api_profile.dart';
 
 import '../Pages/Attendance/Change Password.dart';
 import '../Pages/LoginPage/LoginPage.dart';
@@ -47,7 +49,7 @@ class ReusableDrawer extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (c) =>  Profile()));
+                        builder: (c) =>  api_profile()));
               },
               child: Container(
                 height: 50,
