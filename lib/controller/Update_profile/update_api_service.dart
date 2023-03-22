@@ -20,7 +20,7 @@ class UpdateApiService {
           'Content-Type': 'application/json',
           "api_key": UpdateConstants.updateApiKey,
           "Authorization":
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZmFmZmQ2MTVlZjJhZTY4OTYxZDVhNSIsIm5hbWUiOiJhYnVsIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjc5MzMxNzcyLCJleHAiOjE2Nzk0MTgxNzJ9.KqApUF2BU2Z-BkgQ7MPA4tyJ7vcaS_eahqC1XbSF1TI"
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZmFmZmQ2MTVlZjJhZTY4OTYxZDVhNSIsIm5hbWUiOiJNZCBBbGFtaW4iLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE2Nzk0MjYwMjEsImV4cCI6MTY3OTUxMjQyMX0.0RnRe9S9olwk6GB0rCiZVUq22l84SAQESBlzQ6bPsEk"
         },
         body: jsonEncode({
           UpdateKeyWord.name: name,
